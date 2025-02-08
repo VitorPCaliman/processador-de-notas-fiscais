@@ -17,7 +17,7 @@ public class NotaFiscalService {
 
     private final NotaFiscalProcessor processor;
 
-    @Value("classpath:notas_fiscais.csv")
+    @Value("${input.file}")
     private Resource inputFile;
 
     @Value("${output.validas}")
@@ -25,6 +25,7 @@ public class NotaFiscalService {
 
     @Value("${output.invalidas}")
     private String invalidFilePath;
+
 
     public NotaFiscalService(NotaFiscalProcessor processor) {
         this.processor = processor;

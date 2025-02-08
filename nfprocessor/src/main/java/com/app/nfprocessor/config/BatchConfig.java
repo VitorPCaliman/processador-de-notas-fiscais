@@ -28,7 +28,7 @@ public class BatchConfig {
     @Bean
     public FlatFileItemReader<NotaFiscal> reader() {
         FlatFileItemReader<NotaFiscal> reader = new FlatFileItemReader<>();
-        reader.setResource(new ClassPathResource("notas_fiscais.csv"));
+        reader.setResource(new ClassPathResource("input/notas_fiscais.csv"));
         reader.setLinesToSkip(1);
 
         DefaultLineMapper<NotaFiscal> lineMapper = new DefaultLineMapper<>();
