@@ -208,6 +208,105 @@ id,cnpj,valor
 - [ ] Complementar validações de CNPJ para cobrir uma gama maior de variações.
 
 
+---
+
+## 🙋‍♂️ Como Contribuir com este Projeto?
+
+Procure entender as necessidades do sistema e analisár a lista de melhorias planejadas. Abra issues, discussions e forks. Mas siga as boas práticas.
+
+**Guia de Contribuição - Git Flow**
+
+## 📌 1. O que é Git Flow?
+O **Git Flow** é um modelo de branching para controle de versionamento que define uma estrutura organizada para o desenvolvimento de software. Ele se baseia em dois ramos principais e diversos ramos auxiliares.
+
+## 🌱 2. Estrutura de Branches
+O projeto segue a seguinte estrutura de branches:
+
+- **`main`** → Contém a versão estável do projeto. Apenas merges de releases chegam aqui.
+- **`develop`** → Branch principal de desenvolvimento. Contém o código mais recente aprovado para testes.
+- **Branches auxiliares**:
+  - **`feature/*`** → Usada para desenvolver novas funcionalidades.
+  - **`bugfix/*`** → Corrigir bugs encontrados na branch `develop`.
+  - **`release/*`** → Preparação de uma nova versão, a partir da `develop`.
+  - **`hotfix/*`** → Correção de bugs críticos diretamente na `main`.
+
+### 🎯 Exemplo de criação de branches:
+
+```sh
+# Criando uma nova feature
+git checkout develop
+git pull origin develop
+git checkout -b feature/nome-da-feature
+
+# Criando uma correção de bug
+git checkout develop
+git pull origin develop
+git checkout -b bugfix/nome-do-bug
+```
+
+---
+
+## ✅ 3. Padrões de Commits
+
+Os commits devem ser **claros, descritivos e seguir um padrão**, preferencialmente o **Conventional Commits**:
+
+```
+<tipo>(<escopo>): <descrição breve>
+
+[corpo opcional: detalhes adicionais]
+[rodapé opcional: informações extras, como issue relacionada]
+```
+
+### 📌 Exemplos:
+- `feat(login): adicionar autenticação JWT`
+- `fix(api): corrigir erro de resposta HTTP 500`
+- `docs(readme): atualizar instruções de instalação`
+- `chore(deps): atualizar dependências`
+
+📌 **Tipos de commit mais comuns:**
+- `feat` → Nova funcionalidade
+- `fix` → Correção de bug
+- `docs` → Alterações na documentação
+- `style` → Formatação (espaços, indentação, etc.)
+- `refactor` → Refatoração de código sem mudar comportamento
+- `test` → Adição ou modificação de testes
+- `chore` → Atualizações que não alteram código fonte (build, CI/CD, deps)
+
+---
+
+## 🔄 4. Fluxo de Trabalho
+
+### 👨‍💻 Desenvolvimento de uma Feature:
+1. **Criar uma branch a partir da `develop`**  
+   ```sh
+   git checkout develop
+   git pull origin develop
+   git checkout -b feature/nova-funcionalidade
+   ```
+2. **Desenvolver e commitar seguindo o padrão**  
+   ```sh
+   git add .
+   git commit -m "feat(core): adicionar suporte a múltiplos idiomas"
+   ```
+3. **Enviar para o repositório remoto**  
+   ```sh
+   git push origin feature/nova-funcionalidade
+   ```
+4. **Abrir um Pull Request (PR) para a `develop`**  
+   - Descreva o que foi feito, testes e impactos esperados.
+   - Espere a revisão e aprovação antes do merge.
+
+---
+## 🚀 5. Boas Práticas
+✔ Sempre trabalhe em **branches separadas**  
+✔ Use commits **pequenos e significativos**  
+✔ Faça **revisões de código (PRs)** antes do merge  
+✔ **Teste suas alterações** antes de abrir um PR  
+✔ **Mantenha a `develop` sempre atualizada**  
+
+---
+
+
 🚀 Serviço simples desenvolvida como parte de um desafio técnico e para processar notas fiscais.
 
 Caso tenha sugestões ou melhorias, contribua no repositório! 😊
